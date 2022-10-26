@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: orders
+spec:
+  replicas: 3 
+  selector:
+    matchLabels:
+      app: orders
+  template:
+    metadata:
+      labels:
+        app: orders
+    spec:
+      containers:
+        - name: demo
+          image: quay.io/mcombi/demo
+          ports:
+            - containerPort: 8080
+              protocol: TCP
+              name: tpc-port
+
+
+
+
