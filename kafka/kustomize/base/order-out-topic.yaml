@@ -4,6 +4,8 @@ metadata:
   name: my-topic
   labels:
     strimzi.io/cluster: orders-cluster
+  annotations:
+    argocd.argoproj.io/sync-wave: "1"
 spec:
   partitions: 10
   replicas: 3
